@@ -1,0 +1,660 @@
+/* START OF STYLING WEBPAGE IN GENERAL */
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Georgia, sans-serif;
+    box-sizing: border-box;
+}
+
+/*
+The astrix * used to apply the following settings to all elements on the webpage
+
+This is the CSS Box Model for design and layout of a webpage
+|------ Margin -------|
+|------ Border -------|
+|------ Padding ------|
+|------ Content ------|
+
+Adjusting these settings changes the size/layout/spacing of the elements within it
+
+margin, padding set to 0 for default spacing
+font-family, set font to Poppins, if DNE, go to default font sans-serif
+box-sizing, adjusts padding and border so no layout issues
+
+*/
+
+/* This is to make the menu actually work when you click on them*/
+html {
+    scroll-behavior: auto;
+}
+
+body {
+    background: #080808;
+    color: #fff;
+    /* This is the text colour, set to white*/
+}
+
+/* This is used to customize the body layout of website */
+
+/* END OF STYLING WEBPAGE IN GENERAL */
+
+/* START OF STYLING HEADER SECTION */
+#header {
+    width: 100%;
+    height: 100vh;
+    /* vh, viewpoint height, so that the height matches the height of browser */
+    background-image: url(images/EmersonDangPhoto.png);
+    /* url, link, use to reference image in folder */
+    /* url(folderName/imageInFolderName) */
+    background-size: cover;
+    background-position: center;
+}
+
+/* This block of CSS code states how the block of code (id="header" in HTML file) should look like */
+
+.container {
+    padding: 10px 10% 10%;
+}
+/* For all elements/sections with class=container, put this type of styling to it */
+
+nav {
+    /* First create a flex container, this tells the elements inside will follow flex rules */
+    display: flex;
+    /* Align the items inside the container "flex items" to the center */
+    align-items: center;
+    /* Used to make spacing between flex items to be evenly distributed */
+    justify-content: space-between;
+    /* If items like words exceeds width of flex container, a new line will be made */
+    flex-wrap: wrap;
+}
+
+/* This is used to customize the nav section, the main menu, A FLEX BOX */
+
+.logo {
+    width: 140px;
+}
+
+/* For styling the logo photo*/
+
+nav ul li {
+    display: inline-block;
+    /* Allows you to adjust the width and height of the elements */
+    /* Allows you to place elements side by side */
+    list-style: none;
+    margin: 10px 20px;
+    /* 10 pixels vertically, 20 pixels horizontally */
+}
+
+/* This is for styling the unlinked list and list items inside the nav section */
+
+nav ul li a {
+    color: #fff;
+    /* Font colour to white */
+    text-decoration: none;
+    /* Remove underline */
+    font-size: 18px;
+    position: relative;
+}
+/* This is for styling the actual items (like Home) that are within the nav, unlinked list, list items*/
+
+nav ul li a::after {
+    /* content, can be used to insert URLs, text */
+    content: '';
+    width: 0;
+    height: 3px;
+    background: yellow;
+    /* position absolute, means position it so that it follows the position of its ancestor
+    ancestor meaning the chunk of code it is encapsulated within */
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+/* Create a hover effect for the nav bar when cursor goes on word, it creates a horizontal bar
+used to make website more interactive. after specifies what should happen after cursor
+goes onto the word. hover after is used so that something actually happens */
+
+.header-text {
+    margin-top: 20%;
+    font-size: 30px;
+}
+
+/* For the section, header text, meaning all elements in it, apply these settings to them */
+
+.header-text h1 {
+    font-size: 50px;
+    margin-top: 20px;
+}
+
+/* Styles the section in header-text->h1 section */
+
+.header-text h1 span {
+    color: yellow;
+}
+
+/* Styles the header-text->h1->span section */
+
+/* END OF STYLING HEADER SECTION*/
+
+/* START OF STYLING ABOUT SECTION */
+#about {
+    padding: 80px 0;
+    color: #ababab;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    /* Splits the section into 2 columns */
+    /* Any class with the word row will create 2 columns */
+}
+
+.about-col-1 {
+    /* Adjusts the width of the column */
+    flex-basis: 35%;
+    /* Max is 100% */
+}
+
+.about-col-1 img {
+    width: 100%;
+    border-radius: 15px;
+    /* Makes the borders round */
+}
+
+.about-col-2 {
+    flex-basis: 60%;
+    /* There will be a 5% gap between both columns */
+}
+
+.sub-title {
+    font-size: 60px;
+    font-weight: 600;
+    color: white;
+}
+
+.tab-titles {
+    display: flex;
+    /* Only works for elements within a class=container */
+    /* Automatically places all elements beside each other */
+    margin: 20px 0 40px;
+}
+/* This affects the layout of the tab links within tab titles */
+
+.tab-links {
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative; 
+    /* position: relative works like static, follows order of written code,
+    but allows you to adjust the element's position */
+}
+
+/* The styling for all code with class="tab-links*/
+
+.tab-links::after {
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #ff004f;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s;
+}
+
+/* What should happen after you hover over an element of tab-links */
+
+/* 
+NOTE ON POSITIONING:
+
+For position: relative
+When setting right or left, or top, or bottom, its new position is set 
+relative to the original position
+
+e.g. Suppose a square is in the middle of the page.
+If you set right: 50px; for its new position, then the new
+square will show up to the left. That is because the new position is
+50px to the right, relative to its original position, that being the middle
+
+For position: absolute
+Its new position is postioned relative to its closest ancestor or relative to whole page
+*/
+
+.tab-links.active-link::after {
+    width: 50%;
+}
+
+.tab-contents ul li {
+    list-style: none; 
+    margin: 10px 0;
+}
+
+.tab-contents ul li span {
+    color: yellow;
+    font-size: 14px;
+}
+
+.tab-contents {
+    display: none;
+    /* Hide all tab contents */
+}
+
+.tab-contents.active-tab {
+    display: block;
+    /* Display the tab contents (the information) with the attribute, active-tab */
+    /* block makes the element take up the entire row */
+}
+
+/* END OF STYLING ABOUT SECTION */
+
+/* START OF STYLING SERVICES SECTION */
+/* # for styling ID, . for styling class*/
+#services {
+    /* spacing between element and border, top, right, bottom, left for spacing, can set seperately */
+    padding: 30px 0;
+}
+
+.services-list {
+    display: grid;
+    /* Create a grid container, children become grid items, makes rows and columns */
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* repeat, two arguments, number of times to repeat, pattern to repeat */
+    /* minmax, two arguments, min size for column, max size for column */
+    /* creating 3 columns */
+    grid-gap: 40px;
+    /* grid-gap, takes two arguments, it sets the gap (spacing) between row, column */
+    margin-top: 50px;
+}
+
+/* Go to the services-list section and apply the following to everything
+with the div tag */
+.services-list div {
+    background: #262626;
+    padding: 40px;
+    /* Expands the spacing of the border of an element */    
+    font-size: 13px;
+    font-weight: 300;
+    /* Adjusting the boldness/thickness of the words */
+    border-radius: 10px;
+    /* Curvature of borders */ 
+    transition: background 0.5s, transform 0.5s;
+}
+
+/* Go to the services-list section and apply the following to everything
+within the dib tags, and then the i tag */
+.services-list div i {
+    font-size: 50px;
+    margin-bottom: 30px;
+    /* The spacing between elements within a specific section */
+}
+
+/* Adjusting the titles of the services list */
+.services-list div h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+/* Adjusting the a tag in services list */
+.services-list div a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 12px;
+    margin-top: 20px;
+    display: inline-block;
+    /* Elements will be formed in a horizontal line but will be
+    aligned with respect to each other  */
+}
+
+/* This is to change the appearance of a section in the services-list
+if you were to hover over it with mouse */
+
+.services-list div:hover {
+    background: #ff004f;
+    transform: translateY(-10px);
+}
+/* END OF STYLING SERVICES SECTION */
+
+/* START OF STYLING PORTFOLIO SECTION */
+
+#portfolio {
+    /* Add padding, spacing */
+    padding: 50px 0;
+}
+
+.work-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+
+.work {
+    border-radius: 10px;
+    position: relative;
+    /* What happens to content that is too big to fit on the screen */
+    overflow: hidden;
+}
+
+/* Formats all photos into 3 sections */
+.work img {
+    width: 100%;
+    border-radius: 10px;
+    display: block;
+    /* Adding the transition time for when mouse hovers over an image
+    in My Work section */
+    transition: transform 0.5s;
+}
+
+.work h3 span {
+    color: yellow;
+}
+
+.layer {
+    width: 100%;
+    height: 0;
+    /* height of 0 hides all of this information */
+    background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+    /* Smooth transition of colours, e.g. from left to right, 
+    go from red to blue colour scheme */
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    /* This is for adjusting everything to be in the middle */
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14;
+    transition: height 0.5s;
+}
+
+.layer h3 {
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.layer a {
+    margin-top: 20px;
+    color: #ff004f;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+
+}
+
+.work:hover img {
+    transform: scale(1.1);
+    /* Enlarges the image when mouse hovers over it */
+}
+
+.work:hover .layer {
+    height: 100%;
+    /* When you hover over this section, text and info is displayed */
+}
+
+/* FOR THE BUTTON SEE MORE */
+.btn {
+    /* Styles the See More into a button*/
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #ff004f;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+
+.btn:hover {
+    background: #ff004f;
+}
+
+/* END OF STYLING PORTFOLIO SECTION */
+
+/* START OF STYLING CONTACT SECTION */
+
+/* Styling all elements on the left column */
+.contact-left {
+    flex-basis: 35%;
+    /* This is fo specifying the length and width of an element within a flex container */
+}
+
+/* Styling all p tags in the class=contact-left */
+.contact-left p {
+    margin-top: 30px;
+}
+
+/* Styling all i tags within the p tags of class=contact-left */
+.contact-left p i {
+    color: yellow;
+    margin-right: 15px;
+    font-size: 25px;
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    /* Put them side by side */
+    transition: transform 0.5s;
+}
+
+.social-icons a:hover {
+    color: yellow;
+    transform: translateY(-5px);
+    /* transform is to move elements upon hovering over them */
+}
+
+/* Any element with this class name will take on the properties specified in btn
+plus the properties specificed in btn2 (this one) */
+.btn.btn2 {
+    display: inline-block;
+    background: #ff004f;
+}
+
+/* Styling all elements on the right column */
+.contact-right {
+    flex-basis: 60%;
+}
+
+.contact-right form {
+    width: 100%;
+}
+
+.contact-right form input {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+.contact-right form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+/* Styles the submit button */
+.contact-right form .btn.btn2 {
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.copyright {
+    /* A div tag follows the block display, so it fills everything as a row */
+    /* This is to create a horizontal bar at the end of the webpage*/
+    width: 100%;
+    text-align: center;
+    padding: 25px 0;
+    background: #262626;
+    font-weight: 300;
+    margin-top: 20px;
+}
+
+/* END OF STYLING CONTACT SECTION */
+
+/* START OF STYLING FOR SMALL SCREENS (SMARTPHONES) */
+
+/* All code within this function applies to small screens */ 
+/* @media is used to check for a type of media (newspapers, books, etc) */
+/* only screen is used to say that the media only applies to small screens */
+/* logical operator and, saying both conditions must be met in order for this function to be used */
+/* max-width: 600px, meaning only use this function when the screen matches 600px */
+
+/* Hiding the menu icon and x icon for laptops, and make it visible for small screens only */
+/* This only applies to the navigation bar */ 
+
+nav .fa-solid {
+    display: none;
+}
+
+@media only screen and (max-width: 600px) {
+    /* Restyling the header section for small screens */
+    #header {
+        background-image: url(images/EmersonDangLockScreen.png);
+    }
+
+    .header-text {
+        margin-top: 100%;
+        font-size: 16px;
+    }
+
+    .header-text h1 {
+        font-size: 30px;
+    }
+
+    nav .fa-solid {
+        display: block;
+        /* Make the menu and x icon visible for small screens */
+        font-size: 25px;
+    }
+
+    nav ul {
+        background: #ff004f;
+        position: fixed;
+        /* An element will stay in its position even when the page is scrolled down */
+        top: 0;
+        right: -200px;
+        /* This means that you are positioning the taskbar (menubar)
+        to the very top right of the screen for right: 0px;
+        However, right: -200px, pushes the image to the far right, making it hidden */
+        width: 200px;
+        height: 100vh;
+        /* Ensure element takes up the entire height of the visible portion of browser window */
+        padding-top: 50px;
+        z-index: 2;
+        /* The "stacking order" of elements, positioned relative to the z-axis
+        a higher z-index value will be stacked on top of a lower z-index value
+        This is good for creating layers on your taskbar */
+        transition: right 0.5s;
+        /* The right property should be changed in 0.5s */
+    }
+
+    /* Restyling the elements within the unnumbered list */
+    nav ul li {
+        display: block;
+        margin: 25px;
+        
+    }
+
+    nav ul .fa-solid {
+        /* position: relative, is basically the "leader" as any child elements
+        will be positioned relative to the leader (follow the leader) */
+        /* position: absolute, means that the element will be positioned
+        relative to the leader (any parent element above it) */
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+
+    /* End of restyling header section for small screens*/
+
+    /* Start of restyling about me section for small screens */
+
+    .sub-title {
+        font-size: 40px;   
+    }
+
+    .about-col-1 {
+        flex-basis: 100%;
+    }
+
+    .about-col-2 {
+        flex-basis: 100%;
+    }
+
+    .about-col-1 {
+        margin-bottom: 30px;
+    }
+
+    .about-col-2 {
+        font-size: 14px;
+    }
+
+    .tab-links {
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    /* End of restyling about me section for small screens */
+
+    /* Start of restyling contact me section for small screens */
+
+    .contact-left {
+        flex-basis: 100%;
+    }
+
+    .contact-right {
+        flex-basis: 100%;
+    }
+
+    .copyright {
+        font-size: 14px;
+    }
+    /* End of restyling contact me section for small screens */
+}
+
+/* Start of styling the message displayed after user submits information in contact me section */
+#message {
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+
+}

@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!-- head, usually specifies what is needed for this HTML file-->
+<head>
+    <!-- meta tags are used to describe properties of the HTML file -->
+    <meta charset="UTF-8">
+    <!-- Specifies the character "charset" encoding for document-->
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Makes file compatible with Internet Explorer, Google Chrome -->
+
+    <meta name ="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Makes file compatible with mobile devices -->
+    
+    <!-- title tags are used to specify the name of your website-->
+    <title> Emerson Dang Personal Portfolio </title>
+
+    <!-- link tags are used to link external documents-->
+    <link rel="stylesheet" href="style.css">
+    <!-- rel (relationship) is giving the document your linking a name (what is it) -->
+    <!-- href is used to specify what is the link/file you are linking-->
+    <!-- This will link the css elements to this html file-->
+
+    <!-- Allows for implementation of icons (code) from website fontawesome -->
+    <script src="https://kit.fontawesome.com/daafa9485a.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- body, holds all of your main content -->
+<body>
+<!-- div tags, think of it as a container/section that holds elements-->
+<!-- id tags, used to give a section a specific name-->
+<!-- id vs class, both used to give a particular section a name, except: -->
+<!-- id, for CSS styles and are unique (there exists only one), used to specify what entire section is, use #
+class, for CSS styles, use ., used to group mutliple elements of similar characteristics together -->
+
+<!-- Essentially div id is like naming your function, and div class is the actual function -->
+<!-- This is the header section in the website-->
+<div id="header">
+    <div class="container">
+        <!-- nav tags, used to make a menu, primary navigation menu, like a navigation bar-->
+        <nav>
+            <!-- img tag used for image, src is URL of image, class is to give it a name-->
+            <img src="images/logo.png" class="logo">
+            <!-- ul, make an unordered list, list with no numbers -->
+            <!-- li, lists the items within the unordered list -->
+            <!-- a href is used to make a link within a document -->
+            <ul id="menu">
+                <!-- To make the menu work, your links, href, must be linked to the id of each section (div) -->
+                <!-- Must do #id in href and in CSS file, must add: html {scroll-behavior: smooth}-->
+                <li><a href="#header"> Home </a></li>
+                <li><a href="#about"> About </a></li>
+                <li><a href="#services"> Job Interests </a></li>
+                <li><a href="#portfolio"> Portfolio </a></li>
+                <li><a href="#contact"> Contact </a></li>
+                <!-- Adding a close icon from fontawesome for small screens-->
+                <!-- onclick, means, click this icon, call the function closemenu() in Javascript -->
+                <i class="fa-solid fa-x" onclick="closemenu()"></i>
+            </ul>
+            <!-- Adding a menu bar from fontawesome for small screens -->
+            <!-- onclick, means, click this icon, call the function openmenu() in Javascript-->
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+        </nav>
+
+        <!-- New section within the container -->
+        <div class="header-text">
+            <!-- p, paragraph, br tag, amke a new line -->
+            <p> Software Engineering Student <br> University of Waterloo </p>
+            <!-- h, header text, span tag, colour coded text, need to fix in CSS -->
+            <h1> Hi! Nice to meet you. <br> My name is <span>Emerson!</span> </h1>
+        </div>
+
+    </div>
+</div>
+
+<!-- This is the about section in the website -->
+<!-- div is making a new section in the website-->
+<!-- When giving a class or id, you are giving the section a name so CSS can style it for you-->
+<div id="about">
+    <div class="container">
+
+        <!-- Creating a t-chart essentially-->
+        <div class="row">
+            <!-- col 1, left col, add image -->
+            <div class="about-col-1">
+                <img src="images/user.png">
+            </div>
+
+            <!-- col 2, right col, add text-->
+            <div class="about-col-2">
+                <h1 class="sub-title">About Me</h1>
+                <p> As a current Software Engineering student at the University of Waterloo,
+                I have a keen interest in developing software-related solutions. I am proficient
+                in programming languages such as C++, C, Python, Java, HTML, CSS, JavaScript and SQL. With experiences ranging
+                from the development of personal code projects, as well as my co-op experiences, I am committed to improving technology to solve
+                real-world problems and enhance organizational performance! </p>
+
+                <!-- New section for tab titles-->
+                <!-- For class="" naming, a class can have multiple names
+                e.g. class= "tab-links active-link", this class has two names, indicated by space
+                To reference in CSS, do .tab-links.active-link-->
+
+                <!-- onclick, used to call a function in javascript-->
+                <!-- active-link, meaning thats the first element users see is skills-->
+                <!-- This creates the 3 tab-titles-->
+                <div class="tab-titles">
+                    <p class="tab-links active-link" onclick="opentab('skills')"> Skills </p>
+                    <p class="tab-links" onclick="opentab('experience')"> Experience </p>
+                    <p class="tab-links" onclick="opentab('education')"> Education </p>
+                </div>
+
+                <!-- span, used to add styling to a specific element-->
+                <!-- active-tab, meaning the first thing users see are the skills-->
+                <!-- This creates the description under each category-->
+                <div class="tab-contents active-tab" id="skills"> 
+                    <ul>
+                        <li><span> Passionate </span><br> Willing to tackle problems with a positive attitude. </li>
+                        <li><span> Detailed-Oriented </span><br> Able to analyze and troubleshoot problems in code. </li>
+                        <li><span> Fast Learner </span><br> Able to adapt quickly to work culture and current work projects. </li>
+                    </ul>
+                </div>
+
+                <div class="tab-contents" id="experience"> 
+                    <ul>
+                        <li><span> Quality Assurance Specialist </span><br> Pillar To Post </li>
+                        <li><span> Operations Assistant </span><br> TROES </li>
+                        <li><span> Online Math Tutor </span><br> The Tutoring Expert </li>
+                        <li><span> Bilingual Business Development/Sales Solutions Specialist </span><br> Ricoh Canada </li>
+                        <li><span> President </span><br> Agincourt Computer Council </li>
+                    </ul>
+                </div>
+                
+
+                <div class="tab-contents" id="education"> 
+                    <ul>
+                        <li><span> University of Waterloo </span><br> Bachelor of Software Engineering, Honours Co-op <br> WEEF Representative,
+                        Waterloo Engineering Orientation Leader </li>
+                        <li><span> Agincourt Collegiate Institute </span><br> OSSD, Ontario Scholar, Honours Certificate of Bilingual Studies in Extended French </li>
+                        <!-- <li><span>Something</span><br>Filler words</li> -->
+                    </ul>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- This is the services/job interests section of website-->
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title"> Job Interests </h1>
+
+        <div class="services-list">
+            <!-- This has been styled to be a grid -->
+            <!-- Column 1 -->
+            <div>
+                <!-- Logo from fontawesome -->
+                <i class="fa-brands fa-python"></i>
+                <h2> Back-End Development </h2>
+                <!-- <p> Through the creation of personal projects, this showcases my problem-solving 
+                    and critical thinking skills. </p> -->
+                <!-- a tag, used for hyperlinks -->
+                <!--<a href="#"> Learn More </a> -->
+            </div>
+
+            <!-- Column 2 -->
+            <div>
+                <!-- Logo from fontawesome -->
+                <i class="fa-brands fa-html5"></i>
+                <h2> Front-End Development </h2>
+                <!-- <p> Through the creation of this website using HTML, CSS, and Javascript, this showcases
+                my artistic and creativity skills. </p> -->
+                <!-- a tag, used for hyperlinks -->
+                <!--<a href="#">Learn More</a> -->
+            </div>
+
+            <!-- Column 3 -->
+            <div>
+                <!-- Logo from fontawesome -->
+                <i class="fa-solid fa-pen-nib"></i>
+                <h2> Quality Assurance/Software Testing </h2>
+                <!-- <p> </p> -->
+                <!-- <a href="#">Learn More</a> -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- This is the portfolio section of website-->
+
+<div id="portfolio">
+
+    <div class="container">
+        <h1 class="sub-title"> My Work </h1>
+
+        <div class="work-list">
+
+            <div class="work">
+                <img src="images/Pokemon.png">
+
+                <div class="layer">
+                    <h3> Pokemon Guesser Game in <span> HTML, CSS, Javascript, and HTML </span></h3>
+                    <p> Generates 151 Pokemon from an API and allows user to catch Pokemon after making
+                        correct guess. </p>
+
+                    <!-- Link + Logo -->
+                    <a href="https://github.com/EMERSONDANG/Games-Hack-Club-/blob/master/pokedexpokemon.py"> <i class="fa-solid fa-link"></i> </a>
+                </div>
+            </div>
+
+            <div class="work">
+                <img src="images/hangman.png">
+
+                <div class="layer">
+                    <h3> Hangman in <span> Java </span></h3>
+                    <p> Takes user input for a hidden secret word and generates the correct output 
+                    for every guessed letter. </p>
+                    
+                    <!-- Link + Logo -->
+                    <a href="https://github.com/EMERSONDANG/ASCII-Hangman"> <i class="fa-solid fa-link"></i> </a>
+
+                </div>
+            </div>
+
+
+
+            <div class="work">
+                <img src="images/tictactoe.png">
+
+                <div class="layer">
+                    <h3> Tic-Tac-Toe in <span> C </span></h3>
+                    <p> A two-player classic game where the objective is to achieve a 
+                    winning combination before your opponent. </p>
+
+                    <!--- Link + Logo -->
+                    <a href="https://github.com/EMERSONDANG/Games/blob/master/tictactoe.c"> <i class="fa-solid fa-link"></i> </a>
+                </div>
+            
+            </div>
+
+        </div>
+
+        <!-- btn short for button, this is a See More button created in CSS -->
+        <a href="https://github.com/EMERSONDANG" class="btn"> See More </a>
+    </div>
+</div>
+
+<!-- This is the contact section of website -->
+<div id="contact">
+    <div class="container">
+        <!-- Creating 2 columns within a row -->
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title"> Contact Me </h1>
+                <p> <i class="fa-solid fa-envelope"></i> edang@uwaterloo.ca </p>
+                <p> <i class="fa-solid fa-phone"></i> 647-242-8923 </p>
+
+                <div class="social-icons">
+                    <a href="https://www.facebook.com/profile.php?id=100011302123974"> <i class="fa-brands fa-facebook"></i> </a>
+                    <a href="https://www.instagram.com/emer_d8/"> <i class="fa-brands fa-instagram"></i> </a>
+                    <a href="https://www.linkedin.com/in/emerson-dang-3a5a31265/"> <i class="fa-brands fa-linkedin"></i> </a>
+                    <a href="https://github.com/EMERSONDANG"> <i class="fa-brands fa-github"></i> </a>
+                </div>
+                <!-- This button takes on all properties of btn in CSS file + btn2 properties-->
+                <!-- Allows user to download the specified link onto their computer by using keyword download -->
+                <a href="images/EmersonDangResume.pdf" download class="btn btn2"> Download Resume </a>
+            </div>
+
+            <div class="contact-right">
+                <!-- form tag allows for user input -->
+                <!-- To link it to a Google Sheet, must have the EXACT SAME name fields filled in sheets -->
+                <!-- name="submit-to-google-sheet" is used to link Google Sheet and Contact Me section, found from Github -->
+                <form name="submit-to-google-sheet">
+                    <!-- Make the fields required by adding required -->
+                    <!-- input tag allows for input of one line -->
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="Email" placeholder="Your Email" required>
+                    <!-- textarea allows for input for multiple lines, up to 6 lines (rows) -->
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <!-- Create a button to submit -->
+                    <button type="submit" class="btn btn2"> Submit </button>
+                </form>
+
+                <!-- This is to let the user know they submitted their information already -->
+                <span id="message"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright">
+        <p> Copyright <i class="fa-solid fa-copyright"></i> by Emerson Dang 2025 </p>
+    </div>
+</div>
+
+<!-- Javascript for the About Me section-->
+<script>
+    var tablinks = document.getElementsByClassName("tab-links");
+    // This var stores the 3 categories, skills, experience, education
+    var tabcontents = document.getElementsByClassName("tab-contents");
+    // This var stores the unlinked lists of each category
+
+    // tabname is the name of the tab you are clicking
+    function opentab(tabname) {
+        // Each time you open a tab, loop each section and remove active-link and active-tab, 
+        // no longer active
+        // tablink will either be skills, experience, or education
+        for (tablink of tablinks) {
+            tablink.classList.remove("active-link");
+        }
+
+        // tabcontent will either be the description for skills, education, or experience
+        for (tabcontent of tabcontents) {
+            tabcontent.classList.remove("active-tab");
+        }
+
+        // Add the attribute, active-link depending on if you click skills, experience, or education
+        event.currentTarget.classList.add("active-link");
+        // Get the tabname, tab you just clicked on, add active-tab to its class name
+        document.getElementById(tabname).classList.add("active-tab");
+    }
+
+</script>
+
+<!-- Javascript for the taskbar -->
+<script>
+    // This is to grab the information of the taskbar div section
+    var menu = document.getElementById("menu");
+
+    function openmenu() {
+        menu.style.right = "0";
+        // Go find the id=taskbar, and change the CSS styling property called right to 0
+        // Because initially, id=taskbar styling property for right is -200
+        // This is to change an element within the CSS file
+    }
+
+    function closemenu() {
+        menu.style.right = "-200px";
+    }
+
+</script>
+<!-- Javascript for linkage to Google Sheet + Contact Me section, pulled from GitHub-->
+<!-- To change an element within the HTML file, use innerHTML -->
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbypfXRcEcXftt3uq5l-QKf7q0ZxjXm7Lxwz9Qn8eoNKi5WAxWNEKRvHa2QmXxUxTnYd0w/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("message");
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            // Take the ID section labeled as message (which is the span tag after form tag)
+            // And change the span so that it displays this message when someone submits
+            msg.innerHTML = "Message sent successfully!"
+            // To stop the message from being displayed forever
+            setTimeout (function() {
+                msg.innerHTML = ""
+            },5000)
+            // To reset the information inputted in the form after submission
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+</script>
+
+</body>
+
+</html>
